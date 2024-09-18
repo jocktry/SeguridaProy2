@@ -21,10 +21,24 @@
                     <form method="POST" action='{{route("register.post")}}'>
                         @csrf
                         <div class="form-group mb-3">
-                            <input type="text" placeholder="Fullname" id="fullname" class="form-control"
-                                name="fullname" autofocus>
-                        @if ($errors->has('fullname'))
-                            <span class="text-danger">{{ $errors->first('fullname')}}</span>
+                            <input type="text" placeholder="Nombre" id="nombre" class="form-control"
+                                name="nombre" autofocus>
+                        @if ($errors->has('nombre'))
+                            <span class="text-danger">{{ $errors->first('nombre')}}</span>
+                        @endif
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" placeholder="Apellido" id="apellido" class="form-control"
+                                name="apellido" autofocus>
+                        @if ($errors->has('apellido'))
+                            <span class="text-danger">{{ $errors->first('apellido')}}</span>
+                        @endif
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" placeholder="DNI" id="dni" class="form-control"
+                                name="dni" autofocus>
+                        @if ($errors->has('dni'))
+                            <span class="text-danger">{{ $errors->first('dni')}}</span>
                         @endif
                         </div>
                         <div class="form-group mb-3">
@@ -39,6 +53,31 @@
                                 name="password" required>
                         @if ($errors->has('password'))
                             <span class="text-danger">{{ $errors->first('password')}}</span>
+                        @endif
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="password" placeholder="Confirme password" id="password_confirmation" class="form-control"
+                                name="password_confirmation" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="telefono" placeholder="Telefono" id="telefono" class="form-control"
+                                name="telefono" >
+                        @if ($errors->has('telefono'))
+                            <span class="text-danger">{{ $errors->first('telefono')}}</span>
+                        @endif
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" placeholder="Pais" id="pais" class="form-control"
+                                name="pais">
+                        @if ($errors->has('pais'))
+                            <span class="text-danger">{{ $errors->first('pais')}}</span>
+                        @endif
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea placeholder="Sobre ti" id="descripcion" class="form-control"
+                                name="descripcion" rows="4"></textarea>
+                        @if ($errors->has('descripcion'))
+                            <span class="text-danger">{{ $errors->first('descripcion')}}</span>
                         @endif
                         </div>
                         <div class="d-grid mx-auto">
