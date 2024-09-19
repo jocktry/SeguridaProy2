@@ -63,6 +63,8 @@ class AuthController extends Controller
         ],
         "telefono" => [
             "nullable",
+            "min:9",
+            "max:12",
             "regex:/^\+?[0-9]{9,12}$/"
             // Solo números y el símbolo + (para prefijos internacionales)
         ],

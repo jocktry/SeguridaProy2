@@ -42,13 +42,13 @@ return [
 
     'custom' => [
         'nombre' => [
-            'regex' => 'Solo letras, no números',
+            'regex' => 'Solo letras, no números ni símbolos',
         ],
         'apellido' => [
-            'regex' => 'Solo letras, no números',
+            'regex' => 'Solo letras, no números ni símbolos',
         ],
         'dni' => [
-            'regex' => 'Formato incorrecto, 8 dígitos y una letra',
+            'regex' => 'Formato incorrecto, 8 dígitos y una letra al final',
         ],
         'password' => [
             'regex' => 'Contraseña fuerte: longitud de 8, al menos una mayúscula, una minúscula, un número y un carácter especial',
