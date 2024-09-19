@@ -15,18 +15,19 @@ class AuthController extends Controller
 
     public function loginPost(Request $request){
         $request-> validate([
-            "email" => "required",
+            "email" => "required|email",
             "password" => "required"
         ]);
         $credentials = $request ->only("email", "password");
         if(Auth::attempt($credentials)){
             return redirect()->intended(route("home"));
         }
-        return redirect(route("login"))-> with("error", "Login Failed");
+        return redirect(route("login"))-> with("error", "Credenciales no válidas.");
     }
 
     public function register(){
-        return view("auth.register");
+        $paises = ['Argentina', 'Bolivia', 'Chile', 'Colombia', 'Ecuador', 'España', 'México', 'Perú', 'Uruguay', 'Venezuela'];
+        return view("auth.register", compact('paises'));
     }
 
     public function registerPost(Request $request){
@@ -95,9 +96,9 @@ class AuthController extends Controller
         }
 
         if($user-> save()){
-            return redirect(route("login")) -> with("success", "User created successfully");
+            return redirect(route("login")) -> with("success", "Usuario creado exitosamente.");
         }
-        return redirect(route("register")) -> with("error", "Failed to create account");
+        return redirect(route("register")) -> with("error", "No se pudo crear la cuenta.");
     }
 
 
