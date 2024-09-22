@@ -51,7 +51,7 @@ return [
             'regex' => 'Formato incorrecto, 8 dígitos y una letra al final',
         ],
         'password' => [
-            'regex' => 'Contraseña fuerte: longitud de 8, al menos una mayúscula, una minúscula, un número y un carácter especial',
+            'regex' => 'Contraseña fuerte: longitud de 10, al menos una mayúscula, una minúscula, un número y un carácter especial',
         ],
         'telefono' => [
             'regex' => 'Formato incorrecto, solo números y el símbolo + (para prefijos internacionales)',
